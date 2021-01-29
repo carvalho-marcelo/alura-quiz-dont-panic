@@ -5,24 +5,122 @@
     "questions": [
         {
             "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-            "title": "Como fazer um seletor por id via CSS?",
-            "description": "Essa é pra aquecer",
+            "title": "Qual é a resposta da Vida, do Universo e de Tudo o mais?",
+            "description": "Essa é easy",
             "answer": 2,
             "alternatives": [
-                ".elemento",
-                "*elemento",
-                "#elemento",
-                "%elemento"
+                "32",
+                "24",
+                "42",
+                "36"
             ]
         },
         {
             "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Como fazer um background gradiente com css?",
-            "description": "Faz tempo em haha",
+            "title": "Qual é o item que um mochileiro nunca deve esquecer?",
+            "description": "Essa é easy",
+            "answer": 1,
+            "alternatives": [
+                "Caneca",
+                "Toalha",
+                "Notebook",
+                "Garrafa de café"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "O que está escrito na capa do Guia do Mochileiro das Galáxias em letras amigáveis e garrafais?",
+            "description": "Essa é easy",
+            "answer": 3,
+            "alternatives": [
+                "Não leia!",
+                "Fique Calmo",
+                "Não confie em ninguém",
+                "Não entre em pânico"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Como Arthur conheceu Trillian?",
+            "description": "Essa é easy",
+            "answer": 3,
+            "alternatives": [
+                "Em um restaurante",
+                "Eram amigos de infância",
+                "Em um acidente",
+                "Em uma festa"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Segundo o livro, quais são os seres mais inteligentes do Planeta Terra?",
+            "description": "Ta piorando",
+            "answer": 1,
+            "alternatives": [
+                "Os humanos",
+                "Os ratos",
+                "Os golfinhos",
+                "Os chimpanzés"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Babel é o nome dado a um ________ que traduz todas as línguas da galáxia!",
+            "description": "Ta piorando",
+            "answer": 2,
+            "alternatives": [
+                "papagaio",
+                "dispositivo",
+                "peixe",
+                "robô"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "No Primeiro Volume do Guia do Mochileiro das Galáxias, quem é o Presidente da Galáxia?",
+            "description": "Ta piorando",
             "answer": 0,
             "alternatives": [
-                "background: linear-gradient(#e66465, #9198e5);",
-                "background: gradient(#e66465, #9198e5);"
+                "Zaphod Beeblebrox",
+                "Arthur Dent",
+                "Ford Prefect",
+                "Slartibartfast"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Pela construção de qual lugar do Planeta Terra, Slartibartfast ganhou um prêmio?",
+            "description": "Essa é dureza",
+            "answer": 3,
+            "alternatives": [
+                "País de Gales",
+                "Finlândia",
+                "Dinamarca",
+                "Noruega"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Por que a Terra foi destruída pelos vogons? *Yuck",
+            "description": "Essa é mais ou menos",
+            "answer": 2,
+            "alternatives": [
+                "Para iniciar o domínio da galáxia",
+                "Porque eles estavam entediados",
+                "Para que fosse construído uma via espacial",
+                "Foi um terrível acidente!"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Como Marvin, o Androide Paranoide (melhor personagem btw) é definido no livro?",
+            "description": "Essa é dureza",
+            "answer": 0,
+            "alternatives": [
+                "Robô maníaco e depressivo",
+                "Robô melancólico e depressivo",
+                "Robô mal-humorado e depressivo",
+                "Robô melancólico e mal-humorado"
             ]
         }
     ],
