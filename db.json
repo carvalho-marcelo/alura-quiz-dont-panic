@@ -4,9 +4,9 @@
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
         {
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+            "image": "https://i.giphy.com/media/WRQBXSCnEFJIuxktnw/giphy.webp",
             "title": "Qual é a resposta da Vida, do Universo e de Tudo o mais?",
-            "description": "Essa é easy",
+            "description": "Ta fácil em!",
             "answer": 2,
             "alternatives": [
                 "32",
@@ -16,9 +16,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://i.giphy.com/media/xT5LMAjlRLEJKPCxoI/giphy.webp",
             "title": "Qual é o item que um mochileiro nunca deve esquecer?",
-            "description": "Essa é easy",
+            "description": "Muito fácil",
             "answer": 1,
             "alternatives": [
                 "Caneca",
@@ -28,9 +28,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://i.giphy.com/media/TGzmp1xGN5PoxnZ3mS/giphy.webp",
             "title": "O que está escrito na capa do Guia do Mochileiro das Galáxias em letras amigáveis e garrafais?",
-            "description": "Essa é easy",
+            "description": "Mamão com açúcar",
             "answer": 3,
             "alternatives": [
                 "Não leia!",
@@ -40,9 +40,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://media0.giphy.com/media/hgttC8kbDWYQU/giphy.gif",
             "title": "Como Arthur conheceu Trillian?",
-            "description": "Essa é easy",
+            "description": "Será?",
             "answer": 3,
             "alternatives": [
                 "Em um restaurante",
@@ -52,9 +52,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://i.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.webp",
             "title": "Segundo o livro, quais são os seres mais inteligentes do Planeta Terra?",
-            "description": "Ta piorando",
+            "description": "Hmmmm",
             "answer": 1,
             "alternatives": [
                 "Os humanos",
@@ -64,9 +64,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://i.giphy.com/media/Yavo0SXhZYhSo/giphy.webp",
             "title": "Babel é o nome dado a um ________ que traduz todas as línguas da galáxia!",
-            "description": "Ta piorando",
+            "description": "Acho que... hmm... talvez...",
             "answer": 2,
             "alternatives": [
                 "papagaio",
@@ -76,9 +76,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://i.giphy.com/media/NQTlLEM4eueIEv8aLs/giphy.webp",
             "title": "No Primeiro Volume do Guia do Mochileiro das Galáxias, quem é o Presidente da Galáxia?",
-            "description": "Ta piorando",
+            "description": "Vish...",
             "answer": 0,
             "alternatives": [
                 "Zaphod Beeblebrox",
@@ -88,21 +88,21 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Pela construção de qual lugar do Planeta Terra, Slartibartfast ganhou um prêmio?",
-            "description": "Essa é dureza",
+            "image": "https://i.giphy.com/media/wb6xgCSpLl0m4/giphy.webp",
+            "title": "Coração de ouro era o nome de ...",
+            "description": "Sei la eu",
             "answer": 3,
             "alternatives": [
-                "País de Gales",
-                "Finlândia",
-                "Dinamarca",
-                "Noruega"
+                "Um computador usado para calcular a resposta da vida, do universo e tudo mais",
+                "Um Lugar no universo onde Arthur ficou preso",
+                "Literalmente um coração",
+                "Uma nave roubada pelo Zaphod Beeblebrox"
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://i.giphy.com/media/l2JehFksTYWyD6IMM/giphy.webp",
             "title": "Por que a Terra foi destruída pelos vogons? *Yuck",
-            "description": "Essa é mais ou menos",
+            "description": "The end of the fucking world!",
             "answer": 2,
             "alternatives": [
                 "Para iniciar o domínio da galáxia",
@@ -112,9 +112,9 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "image": "https://i.giphy.com/media/SFkjp1R8iRIWc/giphy.webp",
             "title": "Como Marvin, o Androide Paranoide (melhor personagem btw) é definido no livro?",
-            "description": "Essa é dureza",
+            "description": "Pergunta pros caras do radiohead",
             "answer": 0,
             "alternatives": [
                 "Robô maníaco e depressivo",

@@ -80,7 +80,7 @@ function WidgetHome({ router }) {
                                 <li key={linkExterno}>
                                     <Widget.Topic
                                         as={Link}
-                                        href={`/quiz/${projectName}___${githubUser}`}
+                                        href={`/quiz/${projectName}___${githubUser}?name=${name}`}
                                         style={isNameEmpty ? { pointerEvents: "none", backgroundColor: "#979797" } : null}
                                     >
                                         {`${githubUser}/${projectName}`}

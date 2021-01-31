@@ -10,7 +10,7 @@ import QuizContainer from '../../components/QuizContainer';
 import AlternativesForm from '../../components/AlternativesForm';
 import BackLinkArrow from '../../components/BackLinkArrow';
 
-import planetLoadingAnimation from './animations/planet-loading.json';
+import catLoadingAnimation from './animations/cat-loading.json';
 import rightAnimation from './animations/right-animation.json';
 import wrongAnimation from './animations/wrong-animation.json';
 
@@ -39,7 +39,7 @@ function ResultWidget({ results }) {
 
             <Widget.Content>
                 <p>
-                    {`Parabens ${name}! Você acertou ${qntAcertos}
+                    {`Parabêns ${name}! Você acertou ${qntAcertos}
                     perguntas e marcou ${qntAcertos * 100} pontos`}
                 </p>
                 <ul>
@@ -77,7 +77,7 @@ function LoadingWidget() {
                     width="300px"
                     height="200px"
                     className="lottie-container basic"
-                    config={{ animationData: planetLoadingAnimation, loop: true, autoplay: true }}
+                    config={{ animationData: catLoadingAnimation, loop: true, autoplay: true }}
                 />
             </Widget.Content>
         </Widget>
@@ -94,10 +94,10 @@ function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit, addR
     return (
         <Widget
             as={motion.section}
-            transition={{ stiffness: 260, damping: 10, delay: 0, duration: 1 }}
+            transition={{ stiffness: 260, damping: 10, delay: 0, duration: .6 }}
             variants={{
-                show: { opacity: 1, rotate: 360, scale: 1, x: '0' },
-                hidden: { opacity: 0, scale: 0, x: '-100%' }
+                show: { opacity: 1, rotate: 0, scale: 1, x: '0' },
+                hidden: { opacity: 0, scale: 1, x: '250%' }
             }}
             initial="hidden"
             animate="show"
@@ -113,7 +113,7 @@ function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit, addR
                 alt="Descrição da imagem"
                 style={{
                     width: '100%',
-                    height: '150px',
+                    height: '100%',
                     objectFit: 'cover',
                 }}
                 src={question.image}
@@ -212,13 +212,15 @@ export default function QuizPage({ questions, bg }) {
     useEffect(() => {
         setTimeout(() => {
             setScreenState(screenStates.QUIZ);
-        }, 2000);
+        }, 3000);
     }, []);
 
     function handleSubmitQuestion() {
         const nextQuestion = currentQuestionIndex + 1;
         if (nextQuestion < totalQuestion) {
             setCurrentQuestionIndex(nextQuestion);
+            setScreenState('');
+            setScreenState(screenStates.QUIZ);
         } else {
             setScreenState(screenStates.RESULT);
         }
