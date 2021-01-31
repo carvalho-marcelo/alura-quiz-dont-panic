@@ -1,26 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import db from '../db.json';
-import QuizBackground from '../src/components/QuizBackground';
-import Widget from '../src/components/Widget';
-import QuizLogo from '../src/components/QuizLogo';
-import Button from '../src/components/Button';
-import QuizContainer from '../src/components/QuizContainer';
-import AlternativesForm from '../src/components/AlternativesForm';
+import { Lottie } from '@crello/react-lottie';
+import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
+import QuizBackground from '../../components/QuizBackground';
+import Widget from '../../components/Widget';
+import QuizLogo from '../../components/QuizLogo';
+import Button from '../../components/Button';
+import QuizContainer from '../../components/QuizContainer';
+import AlternativesForm from '../../components/AlternativesForm';
+import BackLinkArrow from '../../components/BackLinkArrow';
+
+import planetLoadingAnimation from './animations/planet-loading.json';
+import rightAnimation from './animations/right-animation.json';
+import wrongAnimation from './animations/wrong-animation.json';
 
 function ResultWidget({ results }) {
+    const router = useRouter();
+    const { name } = router.query;
+
+    const qntAcertos = results.reduce((somatoriaAtual, resultadoAtual) => {
+        return resultadoAtual === true ? somatoriaAtual + 1 : somatoriaAtual;
+    }, 0)
+
     return (
-        <Widget>
+        <Widget
+            as={motion.section}
+            transition={{ delay: 0, duration: .8 }}
+            variants={{
+                show: { opacity: 1, scale: 1, x: '0' },
+                hidden: { opacity: 0, scale: 0, x: '-100%' }
+            }}
+            initial="hidden"
+            animate="show"
+        >
             <Widget.Header>
-                Tela de Resultado:
+                <h1>Tela de Resultado:</h1>
             </Widget.Header>
 
             <Widget.Content>
                 <p>
-                    {`Você acertou
-                    ${results.reduce((somatoriaAtual, resultadoAtual) => {
-                        return resultadoAtual === true ? somatoriaAtual + 1 : somatoriaAtual;
-                    }, 0)}
-                    perguntas`}
+                    {`Parabens ${name}! Você acertou ${qntAcertos}
+                    perguntas e marcou ${qntAcertos * 100} pontos`}
                 </p>
                 <ul>
                     {results.map((result, index) => (
@@ -29,6 +49,8 @@ function ResultWidget({ results }) {
                         </li>
                     ))}
                 </ul>
+
+                <Button type="button" onClick={() => router.push('/')}>Voltar</Button>
             </Widget.Content>
         </Widget>
     );
@@ -36,13 +58,27 @@ function ResultWidget({ results }) {
 
 function LoadingWidget() {
     return (
-        <Widget>
+        <Widget
+            as={motion.section}
+            transition={{ delay: 0, duration: .5 }}
+            variants={{
+                show: { opacity: 1, scale: 1, x: '0' },
+                hidden: { opacity: 0, scale: 0, x: '-100%' }
+            }}
+            initial="hidden"
+            animate="show"
+        >
             <Widget.Header>
-                Carregando...
+                <h1>Carregando...</h1>
             </Widget.Header>
 
-            <Widget.Content>
-                [Desafio do loading]
+            <Widget.Content style={{ display: 'flex', justifyContent: 'center' }}>
+                <Lottie
+                    width="300px"
+                    height="200px"
+                    className="lottie-container basic"
+                    config={{ animationData: planetLoadingAnimation, loop: true, autoplay: true }}
+                />
             </Widget.Content>
         </Widget>
     );
@@ -56,9 +92,18 @@ function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit, addR
     const hasAlternativeSelected = selectedAlternative !== undefined;
 
     return (
-        <Widget>
+        <Widget
+            as={motion.section}
+            transition={{ stiffness: 260, damping: 10, delay: 0, duration: 1 }}
+            variants={{
+                show: { opacity: 1, rotate: 360, scale: 1, x: '0' },
+                hidden: { opacity: 0, scale: 0, x: '-100%' }
+            }}
+            initial="hidden"
+            animate="show"
+        >
             <Widget.Header>
-                {/* <BackLinkArrow href="/" /> */}
+                <BackLinkArrow href="/" />
                 <h3>
                     {`Pergunta ${questionIndex + 1} de ${totalQuestion}`}
                 </h3>
@@ -84,9 +129,9 @@ function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit, addR
                         setIsQuestionSubmited(true);
                         setTimeout(() => {
                             addResult(isCorrect);
-                            onSubmit();
                             setIsQuestionSubmited(false);
                             setSelectedAlternative(undefined);
+                            onSubmit();
                         }, 3000);
                     }}
                 >
@@ -105,8 +150,9 @@ function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit, addR
                                     id={alternativeId}
                                     type="radio"
                                     name={questionId}
-                                    onChange={() => setSelectedAlternative(alternativeIndex)}
+                                    onClick={() => setSelectedAlternative(alternativeIndex)}
                                     style={{ display: 'none' }}
+                                    disabled={isQuestionSubmited}
                                 />
                                 {alternative}
                             </Widget.Topic>
@@ -117,7 +163,26 @@ function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit, addR
                         Confirmar
                     </Button>
 
-                    {isQuestionSubmited && (isCorrect ? <p>Você acertou!</p> : <p>Você errou!</p>)}
+                    {isQuestionSubmited &&
+                        (isCorrect
+                            ? <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '30px' }}>
+                                <Lottie
+                                    width="50px"
+                                    height="50px"
+                                    className="lottie-container basic"
+                                    config={{ animationData: rightAnimation, loop: true, autoplay: true }}
+                                />
+                            </div>
+                            : <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '30px' }}>
+                                <Lottie
+                                    width="50px"
+                                    height="50px"
+                                    className="lottie-container basic"
+                                    config={{ animationData: wrongAnimation, loop: true, autoplay: true }}
+                                />
+                            </div>
+                        )
+                    }
                 </AlternativesForm>
             </Widget.Content>
         </Widget>
@@ -130,12 +195,12 @@ const screenStates = {
     LOADING: 'LOADING'
 };
 
-export default function QuizPage() {
+export default function QuizPage({ questions, bg }) {
     const [screenState, setScreenState] = useState(screenStates.LOADING);
     const [results, setResults] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const totalQuestion = db.questions.length - 8;
-    const question = db.questions[currentQuestionIndex];
+    const totalQuestion = questions.length;
+    const question = questions[currentQuestionIndex];
 
     function addResult(result) {
         setResults([
@@ -147,10 +212,10 @@ export default function QuizPage() {
     useEffect(() => {
         setTimeout(() => {
             setScreenState(screenStates.QUIZ);
-        }, 1000);
+        }, 2000);
     }, []);
 
-    function handleSubmitQuiz() {
+    function handleSubmitQuestion() {
         const nextQuestion = currentQuestionIndex + 1;
         if (nextQuestion < totalQuestion) {
             setCurrentQuestionIndex(nextQuestion);
@@ -160,7 +225,7 @@ export default function QuizPage() {
     }
 
     return (
-        <QuizBackground backgroundImage={db.bg}>
+        <QuizBackground backgroundImage={bg}>
             <QuizContainer>
                 <QuizLogo />
                 {screenState === screenStates.QUIZ && (
@@ -168,13 +233,11 @@ export default function QuizPage() {
                         question={question}
                         questionIndex={currentQuestionIndex}
                         totalQuestion={totalQuestion}
-                        onSubmit={handleSubmitQuiz}
+                        onSubmit={handleSubmitQuestion}
                         addResult={addResult}
                     />
                 )}
-
                 {screenState === screenStates.LOADING && <LoadingWidget />}
-
                 {screenState === screenStates.RESULT && <ResultWidget results={results} />}
             </QuizContainer>
         </QuizBackground>
