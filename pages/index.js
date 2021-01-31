@@ -66,7 +66,7 @@ function WidgetHome({ router }) {
             >
                 <Widget.Content>
                     <h1>Quizzes da Galera</h1>
-                    <p>Da uma olhada nos outros quizzes</p>
+                    <p>Da uma olhada nos outros quizzes ai!</p>
                     <ul>
                         {db.external.map((linkExterno) => {
                             // const [projectName, githubUser] = linkExterno
@@ -111,14 +111,14 @@ export default function Home() {
                 <meta property="og:url" content="https://alura-quiz.carvalho-marcelo.vercel.app/" />
                 <meta property="og:title" content="O Guia do Mochileiro das Galáxias Quiz" />
                 <meta property="og:description" content="Quiz do guia do mochileiro das galáxias" />
-                <meta property="og:image" content="../public/headerImg.png" />
+                <meta property="og:image" content="public\headerImg.png" />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://alura-quiz.carvalho-marcelo.vercel.app/" />
                 <meta property="twitter:title" content="O Guia do Mochileiro das Galáxias Quiz" />
                 <meta property="twitter:description" content="Quiz do guia do mochileiro das galáxias" />
-                <meta property="twitter:image" content="../public/headerImg.png" />
+                <meta property="twitter:image" content="public\headerImg.png" />
             </Head>
             <QuizContainer>
                 <QuizLogo />
