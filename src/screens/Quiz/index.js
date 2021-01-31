@@ -34,7 +34,7 @@ function ResultWidget({ results }) {
             animate="show"
         >
             <Widget.Header>
-                <h1>Tela de Resultado:</h1>
+                <h1>Resultado:</h1>
             </Widget.Header>
 
             <Widget.Content>
@@ -45,11 +45,31 @@ function ResultWidget({ results }) {
                 <ul>
                     {results.map((result, index) => (
                         <li key={`result__${index}`}>
-                            {`#${String(index + 1).padStart(2, '0')} Questão: ${result === true ? 'Acertou!' : 'Errou!'}`}
+                            <Widget.Topic style={{ display: 'flex', justifyContent: 'center', gap: '5%' }}>
+                                {`#${String(index + 1).padStart(2, '0')} Questão: `}
+
+                                {result === true
+                                    ? <div>
+                                        <Lottie
+                                            width="28px"
+                                            height="22px"
+                                            className="lottie-container basic"
+                                            config={{ animationData: rightAnimation, loop: false, autoplay: true }}
+                                        />
+                                    </div>
+                                    : <div>
+                                        <Lottie
+                                            width="28px"
+                                            height="22px"
+                                            className="lottie-container basic"
+                                            config={{ animationData: wrongAnimation, loop: false, autoplay: true }}
+                                        />
+                                    </div>
+                                }
+                            </Widget.Topic>
                         </li>
                     ))}
                 </ul>
-
                 <Button type="button" onClick={() => router.push('/')}>Voltar</Button>
             </Widget.Content>
         </Widget>
