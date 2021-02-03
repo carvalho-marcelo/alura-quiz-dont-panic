@@ -39,7 +39,7 @@ function ResultWidget({ results }) {
 
             <Widget.Content>
                 <p>
-                    {`Parabêns ${name}! Você acertou ${qntAcertos}
+                    {`Parabéns ${name}! Você acertou ${qntAcertos}
                     perguntas e marcou ${qntAcertos * 100} pontos`}
                 </p>
                 <ul>
